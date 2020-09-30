@@ -63,14 +63,14 @@ for file in $@
 		if [ -e $file ]
 		then
 			counter=0
-			if [ -e "$trash_path/$file_name" ]
+			if [ -e "/home/$USER/.trash/$file_name" ]
 			then
-				while [[ -e "$trash_path/$file_name" ]]; do
+				while [[ -e "/home/$USER/.trash/$file_name" ]]; do
 					let "counter++"
 					file_name="$file.$counter"
 				done
 			fi
 			file_name="$file.$counter"
-			mv $file "$trash_path/$file_name" 
+			mv $file "/home/$USER/.trash/$file_name" 
 		fi
 	done
